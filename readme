@@ -9,7 +9,9 @@ Use o comando abaixo para compilar os arquivos-fonte (nonogram.cpp, parser.cpp, 
 g++ nonogram.cpp parser.cpp solver.cpp -o nonogram.exe
 
 Execute com:
-./nonogram.exe
+./nonogram.exe "nome do arquivo"
+Como eles estão na pasta samplestext, então use
+./nonogram.exe samplestext/"arquivo".txt
 
 Por enquanto, você deve mudar a instância dentro do arquivo nonogram.cpp, na linha 13, para um dos arquivos dentro da pasta
 samplestext.
