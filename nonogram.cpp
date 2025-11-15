@@ -10,7 +10,13 @@ using namespace std;
 extern const int webpbn1[];
 
 int main(int argc, char const *argv[]){
-    const string puzzle_file_path = "samplestext/3.txt"; 
+    if (argc < 2) {
+        cerr << "Uso: " << argv[0] << " <caminho_para_arquivo_do_puzzle>" << endl;
+        cerr << "Exemplo: " << argv[0] << " samplestext/5.txt" << endl;
+        return 1;
+    }
+
+    const string puzzle_file_path = argv[1];
 
     //Carrega o nonograma
     Nonograma meu_tabuleiro = carregar_nonograma(puzzle_file_path);
