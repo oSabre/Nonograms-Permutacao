@@ -13,3 +13,6 @@ Execute com:
 
 Por enquanto, você deve mudar a instância dentro do arquivo nonogram.cpp, na linha 13, para um dos arquivos dentro da pasta
 samplestext.
+
+Caso queira ver os resultados das execuções:
+https://docs.google.com/spreadsheets/d/16PVPEcBC0yiaQdmFJ0FLFxaEHAVX9QkAkidQCFyLI6A/edit?usp=sharing
