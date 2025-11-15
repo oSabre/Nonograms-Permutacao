@@ -1,0 +1,15 @@
+Este projeto é um resolvedor de Nonograma (Picross) implementado em C++.
+Ele utiliza uma poderosa combinação de Propagação de Restrições Determinística (baseada na técnica de Permutação ou Full Scan) 
+e o algoritmo de Backtracking para encontrar a solução exata para qualquer instância válida do quebra-cabeça.
+
+Pré-requisitos
+    Compilador C++ (recomendado: g++ ou Clang).
+
+Use o comando abaixo para compilar os arquivos-fonte (nonogram.cpp, parser.cpp, solver.cpp) em um único executável.
+g++ nonogram.cpp parser.cpp solver.cpp -o nonogram.exe
+
+Execute com:
+./nonogram.exe
+
+Por enquanto, você deve mudar a instância dentro do arquivo nonogram.cpp, na linha 13, para um dos arquivos dentro da pasta
+samplestext.
