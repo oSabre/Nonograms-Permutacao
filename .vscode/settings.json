@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "vector": "cpp",
+        "numeric": "cpp",
+        "iostream": "cpp",
+        "fstream": "cpp",
+        "filesystem": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "system_error": "cpp",
+        "xstring": "cpp",
+        "format": "cpp",
+        "algorithm": "cpp"
+    }
+}
