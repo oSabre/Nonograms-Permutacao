@@ -35,7 +35,7 @@ void exportar_para_csv(double tempo, int melhor_custo, int pior_custo, int diff)
 }
 
 int main(int argc, char const *argv[]){
-    const int REINICIOS = 10;
+    const int REINICIOS = 5;
     const double TAXA_PERTUBACAO = 0.50;
     vector<ResultadoExecucao> info;
     int menor_custo = 99999;

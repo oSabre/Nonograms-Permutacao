@@ -23,6 +23,7 @@ do
             # Execução do programa
             # No Msys2/MinGW, você pode chamar o executável diretamente.
             # O '.' é necessário para executar o arquivo do diretório atual.
+            echo "  [EXECUÇÃO $i de $NUM_RUNS] Iniciando iteração nº $i"
             ./nonogram.exe "$ARQUIVO"
         done
         echo "--- $ARQUIVO CONCLUÍDO ---"

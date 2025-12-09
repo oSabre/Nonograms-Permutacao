@@ -96,8 +96,8 @@ int calcular_custo_total(const Nonograma& instancia){
 
 ResultadoExecucao solve_tabu(Nonograma& instancia){
     auto start = std::chrono::high_resolution_clock::now();
-    const int MAX_ITERACOES = 1000;
-    const int DURACAO_TABU = 500;
+    const int MAX_ITERACOES = 500;
+    const int DURACAO_TABU = 50;
 
     map<Movimento, int> lista_tabu;
 
