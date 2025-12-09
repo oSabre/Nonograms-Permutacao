@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <random>
 #include <cmath>
+#include <chrono>
 
 using namespace std;
 
@@ -93,7 +94,8 @@ int calcular_custo_total(const Nonograma& instancia){
     return custo_total;
 }
 
-int solve_tabu(Nonograma& instancia){
+ResultadoExecucao solve_tabu(Nonograma& instancia){
+    auto start = std::chrono::high_resolution_clock::now();
     const int MAX_ITERACOES = 1000;
     const int DURACAO_TABU = 500;
 
@@ -101,10 +103,11 @@ int solve_tabu(Nonograma& instancia){
 
     Nonograma melhor_solucao = instancia;
     int melhor_custo = calcular_custo_total(instancia);
+    int pior_custo = 0;
 
     for(int iter = 0; iter < MAX_ITERACOES; ++iter){
         if(melhor_custo == 0){
-            cout << "Solucao otima encontrada na iteracao " << iter << endl;
+            //cout << "Solucao otima encontrada na iteracao " << iter << endl;
             break;
         }
 
@@ -148,15 +151,22 @@ int solve_tabu(Nonograma& instancia){
                 melhor_solucao.grid = instancia.grid;
             }
 
+            if(novo_custo > pior_custo){
+                pior_custo = novo_custo;
+            }
+
             //cout << "Iteracao " << iter << ": Custo = " << novo_custo << " (Melhor: " << melhor_custo << ")" << endl;
 
         }else{
-            cout << "Busca estagnada na iteracao " << iter << endl;
+            //cout << "Busca estagnada na iteracao " << iter << endl;
             break;
         }
     }
-
+    
     instancia.grid = melhor_solucao.grid;
-    cout << "Busca finalizada. Melhor custo: " << melhor_custo << endl;
-    return melhor_custo;
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double, std::milli> duration = end - start;
+    //cout << "Busca finalizada. Melhor custo: " << melhor_custo << endl;
+    ResultadoExecucao retorno = {duration.count(),melhor_custo,pior_custo};
+    return retorno;
 }

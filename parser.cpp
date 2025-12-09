@@ -62,7 +62,7 @@ Nonograma carregar_nonograma(const string& path){
         }
     }
 
-    cout << "Nonograma " << instancia.colunas << "x" << instancia.linhas << " carregado com sucesso!" << endl;
+    //cout << "Nonograma " << instancia.colunas << "x" << instancia.linhas << " carregado com sucesso!" << endl;
     return instancia;
 }
 

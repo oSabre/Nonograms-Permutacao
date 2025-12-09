@@ -34,6 +34,12 @@ struct Nonograma{
     vector<vector<int>> grid;
 };
 
+struct ResultadoExecucao{
+    double tempo_ms;
+    int melhor_custo;
+    int pior_custo;
+};
+
 Nonograma carregar_nonograma(const string& path);
 void imprimir_tabuleiro(const Nonograma& instancia);
 void solve_nonogram(Nonograma& instancia);
@@ -41,7 +47,7 @@ void solve_nonogram(Nonograma& instancia);
 Restricoes extrair_blocos( const Nonograma& instancia, bool is_linha, int indice);
 int calcular_custo_linha_coluna(const Restricoes& restr_atuais, const Restricoes& restr_ideais);
 int calcular_custo_total(const Nonograma& instancia);
-int solve_tabu(Nonograma& instancia);
+ResultadoExecucao solve_tabu(Nonograma& instancia);
 
 void aplicar_movimento(Nonograma& instancia, const Movimento& mov);
 void perturbar_nonograma(Nonograma& instancia, double taxa_pertubacao);
