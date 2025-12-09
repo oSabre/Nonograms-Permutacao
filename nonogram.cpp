@@ -8,9 +8,9 @@
 using namespace std;
 
 extern const int webpbn1[];
-const std::string NOME_ARQUIVO_CSV = "resultados_busca_tabu.csv";
+const std::string NOME_ARQUIVO_CSV = "resultados_busca_tabu2.csv";
 
-void exportar_para_csv(double tempo, int melhor_custo, int pior_custo, int diff){
+void exportar_para_csv(string nome_arquivo, double tempo, int melhor_custo, int pior_custo, int diff){
     std::fstream arquivo(NOME_ARQUIVO_CSV, std::ios::out | std::ios::app);
 
     if (!arquivo.is_open()) {
@@ -23,10 +23,11 @@ void exportar_para_csv(double tempo, int melhor_custo, int pior_custo, int diff)
     arquivo.seekp(0, std::ios::end);
     if (arquivo.tellp() == 0) {
         // Escreve o cabeçalho (nomes das colunas)
-        arquivo << "Tempo_Médio,Melhor_Custo,Pior_custo,Diferença\n";
+        arquivo << "Nome_do_Arquivo,Tempo_Médio,Melhor_Custo,Pior_custo,Diferença\n";
     }
 
-    arquivo << tempo << ","
+    arquivo << nome_arquivo << ","
+            << tempo << ","
             << melhor_custo << ","
             << pior_custo << ","
             << diff << "\n";
@@ -94,7 +95,7 @@ int main(int argc, char const *argv[]){
         acumulador += info[i].tempo_ms;
     }
     int dif = maior_custo_final - menor_custo_final;
-    exportar_para_csv(acumulador/REINICIOS, menor_custo_final, maior_custo_final, dif);
+    exportar_para_csv(puzzle_file_path, acumulador/REINICIOS, menor_custo_final, maior_custo_final, dif);
 
     return 0;
 }
