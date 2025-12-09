@@ -13,6 +13,9 @@ Execute com:
 Como eles estão na pasta samplestext, então use
 ./nonogram.exe samplestext/"arquivo".txt
 
+Caso queira, há um arquivo shell run_tests.sh que executa o teste em todos os arquivos de teste. 
+(Demora. Muito. De verdade. Tem muitos nonogramas gigantes nos testes.)
+
 Caso queira ver os resultados das execuções:
 https://docs.google.com/spreadsheets/d/16PVPEcBC0yiaQdmFJ0FLFxaEHAVX9QkAkidQCFyLI6A/edit?usp=sharing
 
