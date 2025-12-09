@@ -22,7 +22,7 @@ Nonograma carregar_nonograma(const string& path){
     instancia.col_restr.resize(instancia.colunas);
     instancia.lin_restr.resize(instancia.linhas);
 
-    instancia.grid.assign(instancia.linhas, vector<int>(instancia.colunas, 0));
+    instancia.grid.assign(instancia.linhas, vector<int>(instancia.colunas, 1));
 
     for (int c = 0; c < instancia.colunas; ++c) {
         int num_restr;

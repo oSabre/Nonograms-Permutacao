@@ -6,7 +6,7 @@ Pré-requisitos
     Compilador C++ (recomendado: g++ ou Clang).
 
 Use o comando abaixo para compilar os arquivos-fonte (nonogram.cpp, parser.cpp, solver.cpp) em um único executável.
-g++ nonogram.cpp parser.cpp solver.cpp -o nonogram.exe
+g++ nonogram.cpp parser.cpp solver.cpp tabu.cpp -o nonogram.exe
 
 Execute com:
 ./nonogram.exe "nome do arquivo"
